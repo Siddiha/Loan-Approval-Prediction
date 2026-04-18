@@ -4,3 +4,4 @@ __pycache__/
 .DS_Store
 data/dataset1_classification_cleaned.csv
 data/dataset2_regression_cleaned.csv
+outputs/models/*.pkl
