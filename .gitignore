@@ -1,0 +1,6 @@
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.DS_Store
+data/dataset1_classification_cleaned.csv
+data/dataset2_regression_cleaned.csv
