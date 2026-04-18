@@ -64,14 +64,21 @@ This project tackles two distinct machine learning problems using the same loan 
 ```
 Loan-Approval-Prediction/
 │
-├── loan_approval_data.csv              # Raw dataset
+├── data/
+│   └── loan_approval_data.csv              # Raw dataset
 │
-├── Siddiha_Rimzan_Notebook1.ipynb      # Data preprocessing & cleaning
-├── Siddiha_Rimzan_Notebook2.ipynb      # Classification models (NB, LR, KNN)
-├── Siddiha_Rimzan_Notebook3.ipynb      # Ensemble classifier + Decision Tree regression
+├── notebooks/
+│   ├── Siddiha_Rimzan_Notebook1.ipynb      # Data preprocessing & cleaning
+│   ├── Siddiha_Rimzan_Notebook2.ipynb      # Classification models (NB, LR, KNN)
+│   └── Siddiha_Rimzan_Notebook3.ipynb      # Ensemble classifier + Decision Tree regression
 │
-├── dt1_fully_grown.png                 # Decision tree visualisation (fully grown)
-└── dt2_pruned.png                      # Decision tree visualisation (pruned, depth=4)
+├── outputs/
+│   ├── dt1_fully_grown.png                 # Decision tree visualisation (fully grown)
+│   └── dt2_pruned.png                      # Decision tree visualisation (pruned, depth=4)
+│
+├── requirements.txt
+├── .gitignore
+└── README.md
 ```
 
 ---
@@ -251,23 +258,18 @@ income (57000) ≤ 78756  → go LEFT
 
 These notebooks were developed on **Google Colab** with data stored in Google Drive. To run locally:
 
-1. Clone the repository and place `loan_approval_data.csv` in the working directory.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/Loan-Approval-Prediction.git
+   cd Loan-Approval-Prediction
+   ```
 
 2. Install dependencies:
    ```bash
-   pip install pandas numpy plotly matplotlib scikit-learn
+   pip install -r requirements.txt
    ```
 
-3. Update the file paths in each notebook — replace Google Drive paths with local paths:
-   ```python
-   # Change this:
-   df = pd.read_csv('/content/drive/MyDrive/CW_ML_20240856/loan_approval_data.csv')
-
-   # To this:
-   df = pd.read_csv('loan_approval_data.csv')
-   ```
-
-4. Run the notebooks in order:
-   - **Notebook 1** first — generates the cleaned CSV files
-   - **Notebook 2** — requires `dataset1_classification_cleaned.csv`
+3. Run the notebooks **in order** from the `notebooks/` folder:
+   - **Notebook 1** first — generates the cleaned CSV files into `data/`
+   - **Notebook 2** — requires `data/dataset1_classification_cleaned.csv`
    - **Notebook 3** — requires both cleaned CSVs from Notebook 1
